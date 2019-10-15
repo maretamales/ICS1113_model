@@ -29,7 +29,8 @@ def generate_data():
         "m": [1000, 10000],
         "l": [50, 100],
         "u": [2000, 3000],
-        "beta": [500, 1000]
+        "beta": [500, 1000],
+        "c":[10000,12500]
     }
 
     aux2 = {
@@ -42,7 +43,8 @@ def generate_data():
         "m": ["l", "i", "k"],
         "l": ["k"],
         "u": ["k"],
-        "beta": ["k", "l"]
+        "beta": ["k", "l"],
+        "c":["l","k"]
     }
 
     params = dict()
@@ -88,7 +90,8 @@ def load_data():
         "m": 3,
         "l": 1,
         "u": 1,
-        "beta": 2
+        "beta": 2,
+        "c": 2
     }
 
     with open("parameters.json", "r", encoding="utf-8") as file:
