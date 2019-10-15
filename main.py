@@ -25,6 +25,7 @@ n = params["n"]
 vl = params["l"]
 u = params["u"]
 beta = params["beta"]
+c = params["c"]
 
 
 # Crear Modelo
@@ -69,7 +70,8 @@ model.setObjective(
     quicksum(x[l,i,t]*p[l,i] for t in T for i in I for l in L) +
     quicksum(y[l,i,k,t]*e[l,k] for t in T for k in K for i in I for l in L) +
     quicksum(m[l,i,k]*y[l,i,k,t] for l in L for i in I for k in K for t in T) +
-    quicksum(n[l,k,j]*z[l,k,j,t] for l in L for k in K for j in J for t in T),
+    quicksum(n[l,k,j]*z[l,k,j,t] for l in L for k in K for j in J for t in T)+
+    quicksum(c[l,k]*b[l,k,t] for l in L for k in K for t in T),
     GRB.MINIMIZE
 )
 
